@@ -1,0 +1,22 @@
+#header-nav {
+	border-radius: 0;
+}
+
+#header-nav {
+	background-color: #F5DEDA;
+}
+
+.navbar-brand > h1{
+	clear: both!important;
+}
+
+
+@media (min-width: 768px) {
+	#collapsable-nav {
+		display: none!important;
+	}
+}
+
+section {
+	background-color: #F5DEDA;
+}
