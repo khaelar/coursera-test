@@ -32,7 +32,7 @@
 		service.getMatchedMenuItems = function(searchTerm){
 			return $http({url: "https://davids-restaurant.herokuapp.com/menu_items.json"})
 			.then(function(result){
-				if(!searchTerm.length) return [];
+				if(!searchTerm) return [];
 				// more elegant way then looping over array
 				let foundItems = result.data.menu_items.filter(a => ~a.description.indexOf(searchTerm));
 				return foundItems;
