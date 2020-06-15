@@ -10,9 +10,14 @@
 	function NarrowItDownController(MenuSearchService){
 		let ctrl = this;
 		ctrl.found = [];
+		ctrl.buttonClicked = false;
 		
 		ctrl.btclick = function(){
-			MenuSearchService.getMatchedMenuItems(ctrl.searchStr).then(function(result){ctrl.found = result; console.log(ctrl.found)});
+			MenuSearchService.getMatchedMenuItems(ctrl.searchStr)
+			.then(function(result){
+				ctrl.found = result;
+			});
+			ctrl.buttonClicked = false;
 		}
 		
 		ctrl.removeItem = function(itemIndex){
@@ -38,7 +43,8 @@
 			templateUrl: "foundItems.html",
 			scope: {
 				found: '<',
-				onRemove: '&'
+				onRemove: '&',
+				buttonClicked: '<';
 			},
 			controller: FoundItemsDirectiveController,
 			controllerAs: 'ctrl',
