@@ -17,7 +17,7 @@
 			.then(function(result){
 				ctrl.found = result;
 			});
-			ctrl.buttonClicked = false;
+			ctrl.buttonClicked = true;
 		}
 		
 		ctrl.removeItem = function(itemIndex){

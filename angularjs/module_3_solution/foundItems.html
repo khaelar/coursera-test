@@ -4,4 +4,4 @@
 		<button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
 	</li>
 </ul>
-<p ng-hide="ctrl.found.length && ctrl.buttonClicked">Nothing found</p>
+<p ng-show="!ctrl.found.length && ctrl.buttonClicked">Nothing found</p>
