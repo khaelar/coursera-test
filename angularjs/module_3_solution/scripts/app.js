@@ -9,7 +9,7 @@
 	NarrowItDownController.$inject = ["MenuSearchService"];
 	function NarrowItDownController(MenuSearchService){
 		let ctrl = this;
-		ctrl.found = []
+		ctrl.found = [];
 		
 		ctrl.btclick = function(){
 			MenuSearchService.getMatchedMenuItems(ctrl.searchStr).then(function(result){ctrl.found = result; console.log(ctrl.found)});
