@@ -44,7 +44,7 @@
 			scope: {
 				found: '<',
 				onRemove: '&',
-				buttonClicked: '<';
+				buttonClicked: '<'
 			},
 			controller: FoundItemsDirectiveController,
 			controllerAs: 'ctrl',
