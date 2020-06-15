@@ -39,7 +39,7 @@
 			scope: {
 				found: '<',
 				onRemove: '&'
-			}
+			},
 			controller: FoundItemsDirectiveController,
 			controllerAs: 'ctrl',
 			bindToController: true
