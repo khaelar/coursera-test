@@ -57,7 +57,7 @@
         style="width:250px" ng-disabled="regForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
         </div>
         <div id="info" ng-if="signupCtrl.completed">
-          <p>Registration completed</p>
+          <p>{{ signupCtrl.msg }}</p>
         </div>
 
       </form>
