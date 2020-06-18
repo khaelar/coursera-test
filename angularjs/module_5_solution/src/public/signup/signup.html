@@ -1,0 +1,70 @@
+<html>
+<body>
+  <div class=container>
+
+    <fieldset>
+      <legend style="color:white; textalign:center">Registration Form</legend>
+      <form name="regForm" novalidate>
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" name="fname" ng-model="signupCtrl.user.fname"
+           placeholder="Enter First Name" required>
+          <span ng-if="regForm.fname.$error.required && regForm.fname.$touched">
+            Enter First Name
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" name="lname" placeholder="Enter Last Name"
+          ng-model="signupCtrl.user.lname" required>
+          <span ng-if="regForm.lname.$error.required && regForm.lname.$touched">
+            Enter Last Name
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" name="uemail" ng-model="signupCtrl.user.email"
+           placeholder="Enter email adress" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+          <span ng-if="regForm.uemail.$error.required && regForm.uemail.$touched">
+            Enter Email adress
+          </span>
+          <span ng-if="regForm.uemail.$invalid && regForm.uemail.$touched">
+            Enter Email adress (example@example.com)
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" class="form-control" name="umobileno" ng-model="signupCtrl.user.MobileNo"
+          placeholder="Enter Mobile" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+          <span ng-if="(regForm.umobileno.$error.required && regForm.umobileno.$touched)
+          || (regForm.umobileno.$invalid && regForm.umobileno.$touched)">
+            Enter mobile number (###-###-####)"
+          </span>
+        </div>
+        <div class="form-group">
+          <label>Favorite Dish</label>
+          <input type="text" class="form-control" name="ufavitem" placeholder="Enter favorite dish (short name)"
+          ng-model="signupCtrl.user.favitemname" required>
+          <span ng-if="regForm.ufavitem.$error.required && regForm.ufavitem.$touched">
+            Enter short name of your favorite dish
+          </span>
+        </div><br />
+        <div>
+        <button type="submit" id="btnsubmit" class="btn btn-primary"
+        style="width:250px" ng-disabled="regForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+        </div>
+        <div id="info" ng-if="signupCtrl.completed">
+          <p>Registration completed</p>
+        </div>
+
+      </form>
+    </fieldset>
+
+  </div>
+
+  </body>
+
+</html>

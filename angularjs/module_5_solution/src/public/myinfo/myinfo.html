@@ -1,0 +1,32 @@
+
+<div class="container">
+  <div ng-if="MyInfoCtrl.user.length != 0">
+    <label>First Name: </label>  {{MyInfoCtrl.user.fname}}<br />
+    <label>Last Name: </label>{{MyInfoCtrl.user.lname}}<br />
+    <label>Email: </label>  {{MyInfoCtrl.user.email}}<br />
+    <label>MobileNo.: </label>{{MyInfoCtrl.user.MobileNo}}<br />
+    <label>Favorite Item Name: </label>{{MyInfoCtrl.user.favitemname}}<br />
+  </div>
+
+  <div ng-if="MyInfoCtrl.user.favitemname">
+    <div class="menu-item-tile col-md-6">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="menu-item-photo">
+            <div>{{MyInfoCtrl.user.favitemname}}</div>
+            <img class="img-responsive" width="250" height="150"
+            ng-src="https://myrestwebsite.herokuapp.com/images/{{MyInfoCtrl.user.favitemname}}.jpg" alt="selected item not found">
+          </div>
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{$ctrl.menuitemm.short_name}}</h3>
+          <p class="menu-item-details">{{$ctrl.favoriteitemname.description}}</p>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+    </div>
+</div>
+<div ng-if="MyInfoCtrl.user.length == 0">
+  You have not register Yet...
+  <a ui-sref="public.signup">Register Now</a>
+  </div>
