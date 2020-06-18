@@ -51,14 +51,15 @@
           <span ng-if="regForm.ufavitem.$error.required && regForm.ufavitem.$touched">
             Enter short name of your favorite dish
           </span>
+		  <div id="info" ng-if="signupCtrl.completed">
+          <p>{{ signupCtrl.msg }}</p>
+        </div>
         </div><br />
         <div>
         <button type="submit" id="btnsubmit" class="btn btn-primary"
         style="width:250px" ng-disabled="regForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
         </div>
-        <div id="info" ng-if="signupCtrl.completed">
-          <p>{{ signupCtrl.msg }}</p>
-        </div>
+        
 
       </form>
     </fieldset>

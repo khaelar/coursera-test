@@ -6,11 +6,11 @@
 
   signupController.$inject = ['userService','MenuService'];
   function signupController(userService,MenuService) {
-    var $ctrl=this;
+    var $ctrl = this;
     var signupCtrl = this;
     $ctrl.favoriteDishFound = true;
     signupCtrl.submit = function() {
-    signupCtrl.completed = true;
+    
 
     var userList={
           fname: signupCtrl.user.fname,
@@ -28,6 +28,7 @@
         $ctrl.favoriteDishFound = true;
 		signupCtrl.msg = "Your information has been saved";
 		$ctrl.msg = "Your information has been saved";
+		signupCtrl.completed = true;
       },
       function(err) {
         console.log("Item not found");
@@ -35,6 +36,7 @@
         $ctrl.favoriteDishFound = false;
 		signupCtrl.msg = "No such menu number exists";
 		$ctrl.msg = "No such menu number exists";
+		signupCtrl.completed = true;
       });
   };
 
