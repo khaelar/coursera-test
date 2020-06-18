@@ -27,12 +27,14 @@
         userService.addItem(userList);
         $ctrl.favoriteDishFound = true;
 		signupCtrl.msg = "Your information has been saved";
+		$ctrl.msg = "Your information has been saved";
       },
       function(err) {
         console.log("Item not found");
         userService.addItem(userList);
         $ctrl.favoriteDishFound = false;
 		signupCtrl.msg = "No such menu number exists";
+		$ctrl.msg = "No such menu number exists";
       });
   };
 
